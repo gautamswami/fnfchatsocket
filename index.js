@@ -7,7 +7,7 @@
 // io.on("connection",(socket)=>{
 //     console.log("A USER CONNECCTD")
 // })
-const io = require("socket.io")(process.env.PORT || 8900, {
+const io = require("socket.io")(8900, {
     cors: {
       origin: "*",
     },
