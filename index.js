@@ -9,7 +9,7 @@
 // })
 const io = require("socket.io")(8900, {
     cors: {
-      origin: "*",
+      origin: "http://localhost:19006/",
     },
   });
   
@@ -28,10 +28,10 @@ const io = require("socket.io")(8900, {
     console.log(userId,'user id to find in',users)
     return users.find((user) => user.userId === userId);
   };
+  console.log(`connected at ${process.env.PORT}`)
   
   io.on("connection", (socket) => {
     //when ceonnect
-  
     //take userId and socketId from user
     socket.on("addUser", (userId) => {
       addUser(userId, socket.id);
